@@ -23,13 +23,17 @@
      }*/
     //document.write(a);
     function guess(){
-        const guess = prompt("猜大小");
         if(kkk){
+        return;
+    }
+        const guess = prompt("猜大小");
+        if(!Number.isInteger(guess/1)||guess>6||guess<1)
+        {
+            document.getElementById("demo").innerHTML="输入有误";
             return;
         }
         if(guess==a){
-            document.getElementById("demo").innerHTML="猜对了";
-            document.write("<img src=\"images/0"+a+".gif\"/>");
+            document.getElementById("demo").innerHTML="猜对了"+"<img src=\"images/0"+a+".gif\"/>";
             kkk=true;
         }
         else if(guess>a){
