@@ -3,48 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>finger guess</title>
-    <style>
-        #container{
-            width:600px;
-            height: 300px;
-            border:black solid 10px;
-            margin:0 auto;
-        }
-        #container>div{
-            width:300px;
-            height:300px;
-            float:left;
-        }
-        #mine{
-            background-color:lightskyblue;
-        }
-        #computer{
-            background-color:greenyellow;
-        }
-        #mychoice>img{
-            transform:scaleX(-1);
-        }
-        #container>#result{
-            font-size: 100px;
-            width:600px;
-            text-align: center;
-        }
-    </style>
+<link href="fingermain.css" rel="stylesheet"/>
 </head>
-<body onload="go()">
+<body >
 <div>
     <div id="container">
         <div id="mine">
             <p1>我的</p1>
             <div id="mychoice">
                 <img src="images\dd.gif">
-                <div>
-                    <input type="button" value="石头" onclick="rock()"/>
-                    <input type="button" value="剪刀" onclick="scissors()"/>
-                    <input type="button" value="布" onclick="paper()"/>
-                </div>
             </div>
-
+            <div>
+                <input type="button" value="石头" onclick="rock()"/>
+                <input type="button" value="剪刀" onclick="scissors()"/>
+                <input type="button" value="布" onclick="paper()"/>
+            </div>
         </div>
         <div id="computer">
             <p1>电脑</p1>
@@ -54,78 +27,8 @@
         </div>
     </div>
     <h1 id="result" align="center"></h1><!---style的不知怎滴居中不好使，先用这里的--->
+    <h1 id="result2" align="center"></h1>
 </div>
 </body>
 </html>
-<script>
-    var r;
-    var computerresult;
-    function rock(){
-        document.getElementById("mychoice").innerHTML="<img src=\"images/22.jpg\">";
-        computerresult= computer();
-       judge("rock",computerresult);
-    }
-    function scissors(){
-        document.getElementById("mychoice").innerHTML="<img src=\"images/11.jpg\">";
-        computerresult= computer();
-        judge("scissors",computerresult);
-    }
-    function paper(){
-        document.getElementById("mychoice").innerHTML="<img src=\"images/33.jpg\">";
-        computerresult= computer();
-        judge("paper",computerresult);
-    }
-
-    function judge(mychoice,computerresult) {
-        if(mychoice=="rock"){
-            if(computerresult=="rock"){
-                document.getElementById("result").innerHTML="平";
-            }
-            else if(computerresult=="scissors"){
-                document.getElementById("result").innerHTML="赢了";
-            }
-            else if(computerresult=="paper"){
-                document.getElementById("result").innerHTML="输了";
-            }
-        }
-        else if(mychoice=="scissors"){
-            if(computerresult=="rock"){
-                document.getElementById("result").innerHTML="输了";
-            }
-            else if(computerresult=="scissors"){
-                document.getElementById("result").innerHTML="平";
-            }
-            else if(computerresult=="paper"){
-                document.getElementById("result").innerHTML="赢了";
-            }
-        }
-        else if(mychoice=="paper"){
-            if(computerresult=="rock"){
-                document.getElementById("result").innerHTML="赢了";
-            }
-            else if(computerresult=="scissors"){
-                document.getElementById("result").innerHTML="输了";
-            }
-            else if(computerresult=="paper"){
-                document.getElementById("result").innerHTML="平";
-            }
-        }
-    }
-    function go() {
-        r = 3*Math.random();
-        }
-    function computer(){
-            if(r<1){
-                document.getElementById("computerchoice").innerHTML="<img src='images/22.jpg'>";
-                return "rock";
-            }
-            else if(r<2){
-                document.getElementById("computerchoice").innerHTML="<img src='images/11.jpg'>";
-                return "scissors";
-            }
-            else{
-                document.getElementById("computerchoice").innerHTML="<img src='images/33.jpg'>";
-                return "paper";
-        }
-    }
-</script>
+<script src="fingermain.js"></script>

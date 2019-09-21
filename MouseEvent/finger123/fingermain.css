@@ -1,0 +1,25 @@
+#container{
+    width:600px;
+    height: 300px;
+    border:black solid 10px;
+    margin:0 auto;
+}
+#container>div{
+    width:300px;
+    height:300px;
+    float:left;
+}
+#mine{
+    background-color:cornflowerblue;
+}
+#computer{
+    background-color:greenyellow;
+}
+#mychoice>img{
+    transform:scaleX(-1);
+}
+#result2{
+    font-size: 50px;
+    width:600px;
+    text-align: center;
+}

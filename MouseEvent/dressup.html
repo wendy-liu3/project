@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dress</title>
+    <style>
+        #container div{
+            width: 300px;
+            height:340px;
+            position:absolute;
+        }
+        #container{
+            width: 300px;
+            height:340px;
+            background-image: url('images/dressup/body1.png');
+            position: absolute;
+            top:60px;
+        }
+        #menu div{
+            float:left;
+            border:1px solid black;
+            text-align: center;
+        }
+        #upper{
+            background-image: url("images/dressup/hat.png");
+        }
+    </style>
+</head>
+<body>
+<div id="menu">
+    <div id="green1" onclick="green1()">绿衣 </div>
+    <div id="red2" onclick="red2()"> 红衣</div>
+    <div id="lower1"  onclick="lower1()"> 裤子1 </div>
+    <div id="lower2" onclick="lower2()">裙子</div>
+</div>
+<div id ="container">
+    <div id="upper"> </div>
+    <div id="lower"> </div>
+</div>
+
+<input type="button" value="穿绿衣" onclick="green1()">
+
+</body>
+</html>
+<script>
+    function green1(){
+        document.getElementById("upper").innerHTML="<img src=\"images/dressup/green1.png\">";
+    }//直接插入HTML
+    function red2(){
+        document.getElementById("upper").innerHTML="<img src=\"images/dressup/red2.png\">";
+    }
+    function lower1(){
+        document.getElementById("lower").innerHTML="<img src=\"images/dressup/lower1.png\">";
+    }
+    function lower2(){
+        document.getElementById("lower").style.backgroundImage="ulr('images/dressup/lower2.png')";
+        //为什么改变div背景图片不成功呢
+    }
+</script>
