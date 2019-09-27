@@ -5,8 +5,8 @@
     <title>music</title>
     <style>
         #bottom{width: 50px;
-            height:50px;//太小了图片显示不出来?,也许可以改一下图片的像素再试一试
-            background-image:url('images/1.jpeg');
+            height:50px;//太小了图片显示不出来?,也许可以改一下图片的像素再试一试,试了ok
+            background-image:url('images/1.png');
         }
     </style>
 </head>
@@ -20,11 +20,11 @@
     function control() {
         if(document.getElementById("bgm").paused){
             document.getElementById("bgm").play();
-            document.getElementById("bottom").style.backgroundImage="url('images/1.jpeg')";
+            document.getElementById("bottom").style.backgroundImage="url('images/1.png')";
         }
         else{
             document.getElementById("bgm").pause();
-            document.getElementById("bottom").style.backgroundImage="url('images/2.jpg')";
+            document.getElementById("bottom").style.backgroundImage="url('images/2.png')";
         }
     }
 </script>
